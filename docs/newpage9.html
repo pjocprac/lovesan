@@ -1,0 +1,852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 8.0.0.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>花と観葉植物の部屋</TITLE>
+<SCRIPT language="JavaScript">
+<!--HPB_SCRIPT_SDS_60
+//
+//  Licensed Materials - Property of IBM
+//  5724G06
+//  (C) Copyright IBM Corp. 1995, 2003 All Rights Reserved.
+//
+var appVer = parseInt(navigator.appVersion);
+var isNC=false,isN6=false,isIE=false;
+if (document.all && appVer >= 4) isIE=true; else
+  if (document.getElementById && appVer > 4) isN6=true; else
+    if (document.layers && appVer >= 4) isNC=true;
+var slideobj;
+slideobj = new Array;
+var chkobj;
+chkobj = true;
+//
+// HpbSlideInit
+//
+function HpbSlideInit() {
+  if (arguments.length < 4) return;
+  var n;
+  n = arguments[3];
+  slideobj[n] = new Array;
+  slideobj[n].auto = arguments[0];
+  slideobj[n].interval = arguments[1];
+  var w_str;
+  var base;
+  base = new Array;
+  if (isNC) {
+    w_str = "document." + arguments[2];
+    base = eval(w_str);
+    if (base) {
+      base.pos_x = base.left;
+      for (var div=0; div < arguments.length-3; div++) {
+        w_str = "base.document." + arguments[div+3];
+        slideobj[n][div] = eval(w_str);
+        if (slideobj[n][div]) {
+          slideobj[n][div].innerH = window.innerHeight;
+          slideobj[n][div].innerW = window.innerWidth;
+          slideobj[n][div].pos_x = slideobj[n][div].left;
+          slideobj[n][div].pos_y = slideobj[n][div].top;
+          slideobj[n][div].pos_w = slideobj[n][div].clip.width;
+          slideobj[n][div].pos_h = slideobj[n][div].clip.height;
+          slideobj[n][div].cnt = 0;
+        } else chkobj = false;
+      }
+    } else chkobj = false;
+  }
+  if (isN6) {
+    base = document.getElementById(arguments[2]);
+    if (base) {
+      base.pos_x = parseInt(base.style.left);
+      for (var div=0; div < arguments.length-3; div++) {
+        slideobj[n][div] = document.getElementById(arguments[div+3]);
+        if (slideobj[n][div]) {
+          slideobj[n][div].innerH = window.innerHeight;
+          slideobj[n][div].innerW = window.innerWidth;
+          slideobj[n][div].pos_x = parseInt(slideobj[n][div].style.left);
+          slideobj[n][div].pos_y = parseInt(slideobj[n][div].style.top);
+          slideobj[n][div].pos_w = parseInt(slideobj[n][div].style.width);
+          slideobj[n][div].pos_h = parseInt(slideobj[n][div].style.height);
+          slideobj[n][div].cnt = 0;
+        } else chkobj = false;
+      }
+    } else chkobj = false;
+  }
+  if (isIE) {
+    w_str = "document.all.item(\"" + arguments[2] + "\")";
+    if (eval(w_str)) {
+      w_str = "document.all.item(\"" + arguments[2] + "\").style";
+      base = eval(w_str);
+      if (base) base.pos_x = base.pixelLeft; else chkobj = false;
+    } else chkobj = false;
+    for (var div=0; div < arguments.length-3; div++) {
+      w_str = "document.all.item(\"" + arguments[div+3] + "\")";
+      if (eval(w_str)) {
+        w_str = "document.all.item(\"" + arguments[div+3] + "\").style";
+        slideobj[n][div] = eval(w_str);
+        if (slideobj[n][div]) {
+          slideobj[n][div].innerH = document.body.clientHeight;
+          slideobj[n][div].innerW = document.body.clientWidth;
+          slideobj[n][div].pos_x = slideobj[n][div].pixelLeft;
+          slideobj[n][div].pos_y = slideobj[n][div].pixelTop;
+          slideobj[n][div].pos_w = slideobj[n][div].pixelWidth;
+          slideobj[n][div].pos_h = slideobj[n][div].pixelHeight;
+          slideobj[n][div].cnt = 0;
+        } else chkobj = false;
+  } } }
+  if (!chkobj) return;
+  for (var div = 1; div < slideobj[n].length; div++) {
+    slideobj[n][div].pos_mx = new Array;
+    slideobj[n][div].pos_my = new Array;
+    slideobj[n][div].pos_mx[0] = 0 - ( base.pos_x + slideobj[n][div].pos_w );
+    var w_sub;
+    w_sub = 320-(base.pos_x+slideobj[n][div].pos_x);
+    if (w_sub > 0) slideobj[n][div].pos_mx[0]-=w_sub;
+    slideobj[n][div].pos_my[0] = slideobj[n][0].pos_y + ( slideobj[n][0].pos_h / 2 ) - ( slideobj[n][div].pos_h / 2 );
+    for (var p = 1; ; p++) {
+      slideobj[n][div].pos_mx[p] = slideobj[n][div].pos_mx[p - 1] + 20;
+      slideobj[n][div].pos_my[p] = slideobj[n][div].pos_my[0];
+      if ( slideobj[n][div].pos_mx[p] >= slideobj[n][0].pos_x + ( slideobj[n][0].pos_w / 2 ) - ( slideobj[n][div].pos_w / 2 ) ) {
+        slideobj[n][div].pos_mx[p] = slideobj[n][0].pos_x + ( slideobj[n][0].pos_w / 2 ) - ( slideobj[n][div].pos_w / 2 );
+        break;
+      }
+    }
+    slideobj[n][div].pos_ox = new Array;
+    slideobj[n][div].pos_oy = new Array;
+    slideobj[n][div].pos_ox[0] = slideobj[n][div].pos_mx[slideobj[n][div].pos_mx.length - 1];
+    slideobj[n][div].pos_oy[0] = slideobj[n][div].pos_my[0];
+    for (var p = 1; ; p++) {
+      slideobj[n][div].pos_ox[p] = slideobj[n][div].pos_ox[p - 1] + 20;
+      slideobj[n][div].pos_oy[p] = slideobj[n][div].pos_oy[0];
+      if ( slideobj[n][div].pos_ox[p] >= slideobj[n][div].innerW ) {
+        break;
+      }
+    }
+  }
+  slideobj[n].idiv = 1;
+  slideobj[n].odiv = slideobj[n].length - 1;
+  slideobj[n].lr = 1;
+  slideobj[n].itm = false;
+  slideobj[n].otm = false;
+  HpbSlideShowObj(slideobj[n][slideobj[n].idiv]);
+}
+//
+// HpbSlideNext
+//
+function HpbSlideNext( n ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    if ( slideobj[n].auto == true ) {
+      if ( slideobj[n].itm == false && slideobj[n].otm == false ) {
+        var p;
+        if ( slideobj[n].lr > 0 ) {
+          slideobj[n].odiv = slideobj[n].idiv;
+          p = 0;
+        } else {
+          slideobj[n].idiv = slideobj[n].odiv;
+          slideobj[n].odiv += 1;
+          if ( slideobj[n].odiv >= slideobj[n].length ) slideobj[n].odiv = 1;
+          p = slideobj[n][slideobj[n].odiv].pos_ox.length - 1;
+        }
+        slideobj[n].otm = true;
+        setTimeout( "HpbSlideTimerOut('" + n + "'," + p + ")", slideobj[n].interval );
+        if ( slideobj[n].lr > 0 ) {
+          slideobj[n].idiv += 1;
+          if ( slideobj[n].idiv >= slideobj[n].length ) slideobj[n].idiv = 1;
+          p = 0;
+        } else {
+          p = slideobj[n][slideobj[n].idiv].pos_mx.length - 1;
+        }
+        slideobj[n].itm = true;
+        setTimeout( "HpbSlideTimerIn('" + n + "'," + p + ")", slideobj[n].interval );
+      }
+    }
+  }
+}
+//
+// HpbSlideTimerIn
+//
+function HpbSlideTimerIn( n, p ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    var div;
+    div = slideobj[n].idiv;
+    if (slideobj[n][div]) {
+      var pl;
+      if ( slideobj[n].lr > 0 && p == 0 ) HpbSlideShowObj(slideobj[n][div]);
+      HpbSlideMoveobj(slideobj[n][div],slideobj[n][div].pos_mx[p],slideobj[n][div].pos_my[p]);
+      pl = slideobj[n][div].pos_mx.length;
+      p += slideobj[n].lr;
+      if ( ( p < pl && slideobj[n].lr > 0 )
+        || ( p >= 0 && slideobj[n].lr < 0 ) ) {
+        setTimeout( "HpbSlideTimerIn('" + n + "'," + p + ")", 100 );
+      } else {
+        slideobj[n].itm = false;
+        HpbSlideNext( n );
+        if ( slideobj[n].lr < 0 ) HpbSlideHideObj(slideobj[n][div]);
+      }
+} } }
+//
+// HpbSlideTimerOut
+//
+function HpbSlideTimerOut( n, p ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    var div;
+    div = slideobj[n].odiv;
+    if (slideobj[n][div]) {
+      var pl;
+      if ( slideobj[n].lr < 0 && p == ( slideobj[n][div].pos_ox.length - 1 ) ) HpbSlideShowObj(slideobj[n][div]);
+      HpbSlideMoveobj(slideobj[n][div],slideobj[n][div].pos_ox[p],slideobj[n][div].pos_oy[p]);
+      pl = slideobj[n][div].pos_ox.length;
+      p += slideobj[n].lr;
+      if ( ( p < pl && slideobj[n].lr > 0 )
+        || ( p >= 0 && slideobj[n].lr < 0 ) ) {
+        setTimeout( "HpbSlideTimerOut('" + n + "'," + p + ")", 100 );
+      } else {
+        slideobj[n].otm = false;
+        HpbSlideNext( n );
+        if ( slideobj[n].lr > 0 ) HpbSlideHideObj(slideobj[n][div]);
+      }
+} } }
+//
+// HpbSlideStart
+//
+function HpbSlideStart( n, pn, rb, sq, mv ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    if ( slideobj[n].itm == false && slideobj[n].otm == false ) {
+      var p;
+      if ( slideobj[n].lr == pn ) {
+        if ( pn > 0 ) {
+          slideobj[n].odiv = slideobj[n].idiv;
+          if ( sq > 0 ) {
+            slideobj[n].idiv += 1;
+            if ( slideobj[n].idiv >= slideobj[n].length ) slideobj[n].idiv = 1;
+          } else {
+            slideobj[n].idiv -= 1;
+            if ( slideobj[n].idiv < 1 ) slideobj[n].idiv = slideobj[n].length - 1;
+          }
+        } else {
+          slideobj[n].idiv = slideobj[n].odiv;
+          if ( sq > 0 ) {
+            slideobj[n].odiv += 1;
+            if ( slideobj[n].odiv >= slideobj[n].length ) slideobj[n].odiv = 1;
+          } else {
+            slideobj[n].odiv -= 1;
+            if ( slideobj[n].odiv < 1 ) slideobj[n].odiv = slideobj[n].length - 1;
+          }
+        }
+      } else {
+        slideobj[n].lr = pn;
+        if ( rb == false ) {
+          if ( pn > 0 ) {
+            if ( sq > 0 ) {
+              slideobj[n].idiv = slideobj[n].odiv + 1;
+              if ( slideobj[n].idiv >= slideobj[n].length ) slideobj[n].idiv = 1;
+            } else {
+              slideobj[n].idiv -= 1;
+              if ( slideobj[n].idiv < 1 ) slideobj[n].idiv = slideobj[n].length - 1;
+            }
+          } else {
+            if ( sq > 0 ) {
+              slideobj[n].odiv = slideobj[n].idiv + 1;
+              if ( slideobj[n].odiv >= slideobj[n].length ) slideobj[n].odiv = 1;
+            }
+          }
+        }
+      }
+      if ( mv == true ) {
+        if ( pn > 0 ) {
+          p = 0;
+        } else {
+          p = slideobj[n][slideobj[n].odiv].pos_ox.length - 1;
+        }
+        slideobj[n].otm = true;
+        setTimeout( "HpbSlideTimerOut('" + n + "'," + p + ")", 100 );
+      } else {
+        if ( pn > 0 ) {
+          HpbSlideShowObj(slideobj[n][slideobj[n].idiv]);
+        } else {
+          HpbSlideShowObj(slideobj[n][slideobj[n].odiv]);
+        }
+      }
+      if ( mv == true ) {
+        if ( pn > 0 ) {
+          p = 0;
+        } else {
+          p = slideobj[n][slideobj[n].idiv].pos_mx.length - 1;
+        }
+        slideobj[n].itm = true;
+        setTimeout( "HpbSlideTimerIn('" + n + "'," + p + ")", 100 );
+      } else {
+        if ( pn > 0 ) {
+          HpbSlideHideObj(slideobj[n][slideobj[n].odiv]);
+        } else {
+          HpbSlideHideObj(slideobj[n][slideobj[n].idiv]);
+        }
+      }
+    }
+  }
+}
+//
+// HpbSlideShowObj
+//
+function HpbSlideShowObj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "show";
+    if (isN6) obj.style.visibility = "visible";
+    if (isIE) obj.visibility = "visible";
+    lastobj = obj;
+} }
+//
+// HpbSlideHideObj
+//
+function HpbSlideHideObj(obj) {
+  if (obj) {
+    if (isNC) obj.visibility = "hide";
+    if (isN6) obj.style.visibility = "hidden";
+    if (isIE) obj.visibility = "hidden";
+} }
+//
+// HpbSlideMoveobj
+//
+function HpbSlideMoveobj(obj,x,y) {
+  if (obj) {
+    if (isNC) {obj.left=x;obj.top=y;}
+    if (isN6) {obj.style.left=x+"px";obj.style.top=y+"px";}
+    if (isIE) {obj.left=x;obj.top=y;}
+} }
+//
+// HpbSlideAutoStart
+//
+function HpbSlideAutoStart( n, pn, mv ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    if ( slideobj[n].itm == false && slideobj[n].otm == false &&  slideobj[n].auto == false ) {
+      if ( slideobj[n].lr != pn ) {
+        if ( pn > 0 ) {
+        } else {
+          slideobj[n].odiv = slideobj[n].idiv;
+          slideobj[n].idiv += 1;
+          if ( slideobj[n].idiv >= slideobj[n].length ) slideobj[n].idiv = 1;
+        }
+      }
+      slideobj[n].auto = true;
+      slideobj[n].lr = pn;
+      if ( mv == true ) {
+        HpbSlideNext( n );
+      } else {
+        HpbSlideSwap( n, pn );
+      }
+    }
+  }
+}
+//
+// HpbSlideAutoStop
+//
+function HpbSlideAutoStop( n ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    slideobj[n].auto = false;
+  }
+}
+//
+// HpbSlideSwap
+//
+function HpbSlideSwap( n, pn ) {
+  if ((isNC||isN6||isIE) && chkobj) {
+    if ( slideobj[n].auto == true ) {
+      HpbSlideStart(n,pn,false,pn,false);
+      setTimeout( "HpbSlideSwap('" + n + "'," + pn + ")", slideobj[n].interval );
+    }
+  }
+}
+//-->
+</SCRIPT></HEAD>
+<BODY text="#260B68" background="haikei2.jpg" onload="HpbSlideInit(false, -1, 'Layer21', 'Layer18', 'Layer1', 'Layer2', 'Layer3', 'Layer4', 'Layer5', 'Layer6', 'Layer7', 'Layer8', 'Layer9', 'Layer10', 'Layer11', 'Layer12', 'Layer13', 'Layer14', 'Layer15', 'Layer16', 'Layer17', 'Layer18');">
+<P align="center">　　　　　　　　　　　　　　　　　　　　　　<FONT size="+1"><B><U><FONT size="+2">雑記録帳</FONT>　１８　<FONT size="+0">（日記）</FONT></U></B></FONT><B><U>　　２００６、１、５より　　　　　　　　　　<A href="newpage59.html">雑記録帳　19へ</A><BR>
+<BR>
+　トリノのテレビの一部ををデジカメで撮りました、不手際ですが少しの間、お付き合い下さい。（手動１７枚）<BR>
+<BR>
+</U></B></P>
+<P>　　　　　　　　<BR>
+</P>
+<P align="center"><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<CENTER></CENTER>
+<P align="center"><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<CENTER>
+<TABLE>
+  <TBODY>
+    <TR>
+      <TD width="312"><I><B>素敵でした、おめでとう！！！</B></I>　<B><U><FONT size="3">テレビより</FONT></U></B></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<CENTER>
+<TABLE width="640">
+  <TBODY>
+    <TR>
+      <TD height="242"><IMG src="f.2.jpg" width="324" height="250" border="0"></TD>
+      <TD height="242"><IMG src="f.1.jpg" width="350" height="250" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE border="1" width="860" bgcolor="#cab5f7">
+  <TBODY>
+    <TR>
+      <TD width="859" bgcolor="#ffffff">２月２７日　　　　オリンピックは終った。　荒川静香は素晴らしかった。自信に満ちて得点にならないイナバウアーを入れて見事にレベル４をクリアし優勝した。誰が観ても美しく思えた優雅な、うっとりする演技だった。<BR>
+      私は偶然、昨日徳田章アナウンサー（ナレーション）の荒川静香の金メダルまでの越し方の特集を見る事が出来た。ビデオに取り、何回も観て感動した。<BR>
+      新しく取り入れられた”採点”「レベル４」をクリアする為、今迄との異なる現実に悩み、どれほどトリノに向かって研鑽努力した事か、中国、フランス、ロシアと遠征し辿った道は厳しかったが、フランスのインターネット・カフェで見た、フアンのメールの中に　「美しく舞う姿が素敵です、あの演技を見たい」に、心が安らいだらしい。曲もトゥーランドットに替えて自分の持ち味を信じ演じ切ったのだと思う。　トリノの２ヶ月前にコーチを変えている。今後の新星「浅田真央」の出現にも此処一番、真剣にならざるを得なかったと思う。（ビデオを見て感じたこと）</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#a89bf2">
+  <TBODY>
+    <TR>
+      <TD width="320" background="haikei2.jpg"><IMG src="emerarud.jpg" width="320" height="240" border="0"></TD>
+      <TD width="524" bgcolor="#ffffff" valign="top">2月25日　　　　 転んだ（左によろめいただけ）のは23日夜、手首が腫れて痛むので湿布をした。翌朝病院へ行って胃の検査を受け、眼科へ寄り帰りに買い物もした、足は何でもなかった。それなのに今朝起きたら右足の膝裏が攣って足が立たなかった。一体これはどういう事なのだろう？家の中を歩くのも不自由で今日は一日動くのをやめた。プチの餌をやったり戸を開けるのが面倒で鬱陶しい、よろけて転んだ時に膝を挫いたに違いないが、今朝になって痛み出すとは恐ろしい事だ、おかしな格好で転んだに違いない。今夜11時からつい先程（1時半）までプチと並んでストーブの前で手枕で眠り、夢を見た。（クッションを持って来るのも煩わしかった）今目覚め、まざまざと夢の中の人の顔も覚えている。佐藤さん高見さんの二人、私はビヤ樽を利用してスカートを作ろうとしていた（ビヤ樽は不規則な白黒の大きい格子だった）おかしな夢だった。佐藤さんは早5年前に天国の住人になっていらっしゃる。　もう近いかも知れない！と感じた。で、この状態を此処へ書こうとカメラを取り出しこの”エメラルドラブ”をテレビの上にのせて写した。緑の花は大好きだ、最初の花は葉にへばり付いていたのに2度目の植え替えをした後、花の出方がさまになってきた。希望！そんな自己暗示もあった、つれる足を庇いながら写真を撮るなんて、何と私は強かなのだろう！？　　プチはしきりに何かを要求している、毎晩のブラッシングをしながら、この子を保健所へ連れて行かなければならない日が来るのであろうか？と悲しい予感が脳裏をよぎった。人間は皆独りなのだ、出来れば全てを自分で始末をしてゆきたい。<BR>
+      民間テレビ？では田原総一郎司会で皇室の問題を取り上げての「朝まで生テレビ」とやらをやっている。<BR>
+      今日はフィギュアスケートで荒川が金メダルを取った、のびのびと素晴らしかった。1回目の赤と白、2回目のブルーのコスチュームともセンスがよくて美しさを引き立てていた。何度も繰り返されるその姿のテレビ写真を撮る元気が今日の私には無かった、残念。<BR>
+      宵寝し過ぎたので眠る気にならず、この後　”index”の万作（近くのお寺の境内で22日撮る）に挑戦、思ったものは出来なかったが、結局花の顔の紹介になった。朝6時になっていた。電気を消し、明るみ始めた外の気配にカーテンを開け、ストーブ、門灯を消し、昨夜から温まっている寝床にもぐりこむ。　そして11時起床、いくらか痛みは緩和、時間が救いだと感じる。パンとレタス・スープのブランチを摂り、この書き込みをする。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#b8abf5">
+  <TBODY>
+    <TR>
+      <TD width="320" background="haikei2.jpg" height="101"><IMG src="missupo-tu2.jpg" width="320" height="240" border="0"></TD>
+      <TD width="540" bgcolor="#ffffff" height="101">2月23日　　　　朝９時までに病院へ行くのに前日から用意したが夜、洗濯物を干そうと2階へ上がった折、左手首を捻挫してしまった為、頭の働きまで鈍ったようで不如意な状態で出かけた。　しかし以前の病院の先生看護婦さんが終始優しく完璧な検査とケアをして下さったので古巣へ帰ったぬくもりに心が安らぎました。捻挫の処置もして頂く。胃の検査の結果は無事で、逆流性食道炎の薬が出ました。<BR>
+      気になっていた目の訴えをしたら眼科の紹介をして下さる。　紹介状を持って帰途寄り、診て頂く。大変納得がゆく診察で有難かった、白内障は手術をする段階ではない様でしたがこの次他のメガネも持参して諸々の事を決めたいと思いました。<BR>
+      デオデオに寄りマゼンダ・インクを買い朝から何も食べていないお腹に天ぷらうどんと稲荷ずし1個を入れ、本店で植物灯2本を買い求め帰宅夕方まで休みました。<BR>
+      <BR>
+      2月20日　　　　朝は雨降り、気分は鬱陶しかったが午後になり晴れ間も見え気分一新する。どうも胃の調子がおかしいので以前お世話になったお医者様に検査の予約をお願いする。木曜日胃カメラを飲む事になった。<BR>
+      午後3時スポーツセンターへ出向く。ウオーキングマシーンの順を取って先ず指導員のＩさんを写す、可愛いお嬢さんです。始め自転車に乗ったが足がだるくて6分で降りストレッチ休息、歩くマシーンを４０～５０Ｋで10分、休息を含めて1時間余りを何とか無事にクリアして帰途についた。<BR>
+      <BR>
+      今日は息子の誕生日なので夜8時を待って電話を掛けた。この間還暦のお祝いを言ったばかりなのに早一年が経った。<BR>
+      「お母さんは子孝行と思うよ！」と憎まれ口を言ったら、「僕もそう思うよ」と素直な言葉が返ってきた。普段は電話もして来ないので私は拗ねた気持ちもチョッピリ入っていたが何故かふっと寂しくなった。誰しもが老年になれば抱く思いであろう。団塊の世代の人達は色々なものを背負って不安の時代を生きている。<BR>
+      スポーツセンターは明日が休みの所為か、若者達がいっぱいで、受付でバドミントン等の順番取りで賑わっていた、あの光景が息子への電話の終りに頭に浮かび上がった。これからは孫達の時代になるのだ、どうぞ穏やかな日々が続きますようにと祈る気持ちをこめて短い電話を切った。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" bgcolor="#c9b7f9">
+  <TBODY>
+    <TR>
+      <TD bgcolor="#ffffff" width="846">２月１８日　　　　郵便物、本類、の始末をしないと溜まる一方だ。当分の課題！何処まで始末すべきか？　古い人間我？を感じる。<BR>
+      悲しいニュースが多すぎる、テレビは休み久し振りにデスクトップの音量を上げ世界の”名曲100選”をかけっぱなして雑用をする。ＢＧＭー良い思いつきだ！　<BR>
+      ４時半アルカリイオン水のカートリッジの取替えに山本さん来られる。リビングの蛍光灯もついでに付け替えていただく。<BR>
+      去年血糖値が高くて３週間入院したそうだ、奥さんは看護婦さん、娘さん二人も看護婦さんになられ、既に結婚して可愛いお孫さんも出来た。電話の折「写真持って行きます」と言われたが、家族的のお付き合いになって居るから楽しみにしていた。あれから１５年経った、ふ～っと歳月を振り返る。島根に住む奥さんのお母さんがこの間、家の修理で騙された等の話を聞きながら、可愛いお孫さんやご家族の小アルバムを拝見した。<BR>
+      　<BR>
+      ２月１７日　　　　お天気になった！　風は強い。　　庭の椿が湿った土の上にピンクの花を落とし美しい。今日は灯油を買う日、他所の家でもタンクを出して待っている。週２回の巡回灯油やさん、早めに買い物をしてお金を崩して置こうとスーパーへ走った。原田さんと出会えた、久しくお見かけせず、お痩せになった様なので伺ったら市の検診でチェックされ胃の手術を受けられ４日間入院して帰った所だと仰った。町内のお当番について伺ったらもう３年前からやっていないと言われた（３ヶ月お姉さま）　　やっぱり私も同調しようと心で決めた。<BR>
+      申し合わせたようにこのあと、今年のお当番Ｋさんからお電話を頂く、既に私をとばして次の方に回す予定に内々話は決まっていたが一応意向を問い合わせて下さったのだ。町内会長さんから今年度の役員についてのおふれが回っていた様だ、自分の事が精一杯の現状をお話して次の方に委ねるようにお願いした。考えてみたら長年、お父さんが何時も出席していて、私は集会所で皆さんにお会いした事も無かった。<BR>
+      セントポーリアの植え替え、お掃除が終ったら翌日の３時近くになっていた。カーペットを雑巾掛けしたらわき腹が痛くなり翌日の無事を思い湿布を貼って眠りについた。<BR>
+      <BR>
+      ２月１６日　　　　又雨！　昼時間を利用してスポーツセンターへ出かけてみた。　トレーニング・ルームは久し振り、指導員の方達にリードされて先ず自転車に乗った。１１分、（１．８キロ）歩行マシーンも１１分、肋木で吊り下がり１０秒４回、と言った具合に久し振りの機具による運動を試みる。ベルト・マシーン？で肩や背中を刺激したら血行が良くなったのか痒くなった（結果、首が軽くなり快い）ストレッチ自分流で最後は〆て、約１時間の試しトレーニング終了、帰宅した。<BR>
+      指導員に背丈、体脂肪も計って貰いメモに記録した。正しく計った背丈は、６０代より２センチちじんで居ただけでホッとした。他は標準以内。帰宅し聊か疲れたが、昼食を摂り休息、夕刻には体が軽く感じられる。効果有り！！　とても嬉しい。<BR>
+      昼時を利用すればマシーンは空いているから、今後も是非続けたく思った。外を歩くと転ぶ可能性があるので、車を活かしてプラスにしたい。<BR>
+      暮れ方内田で、セントポーリアの植え替え用土を２袋求めて来た。今晩から植え替えを実行しよう。<BR>
+      セーターを軒下に干した侭だが、７時前の気象予報で、明日　雨は上がるらしいからあのままで大丈夫、しかし寒くなるようだ。<BR>
+      こんな些細な事も反芻して注意する日常になった。自分で自分を護る！　　私の話には何時も落ちがつく。　自分の失敗に学ぶ実例、恥ずかしながらお披露しよう。<BR>
+      昨日洗濯物を干しに２階へ上がったらエアコンの温風で部屋が暖かい。記憶が頭の中を駆け巡る、２日前から点けっぱなしだったようだ。　消した後、よく確かめなかったらしいのだ。エアコンを切り、コンセントを差し込から完全に抜いた。此処までしなくてもと思う程神経質になっていた。　電気代で済む事かも知れないが、危険に繋がる。　又失敗から学びました。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c7b3f7">
+  <TBODY>
+    <TR>
+      <TD width="860" bgcolor="#ffffff">２月１５日　　　　今日は大活躍をした、昼過ぎ、先ずヘアーマニキュアに挑戦、入浴、洗濯×２＋セーターのクリーニング３枚。<BR>
+      お天気は悪かったが暖かい日だったので思いっきり働いた。２階へ上がって洗濯物を室内いっぱいに干す。明朝のパンが無いので、夕方５時半スーパーへ車で行く。帰途雨が激しく降り始めた、夜になって尚雨音は激しい。<BR>
+      昨日の事、ワーディアンケースの中の蛍光灯が点かなくなった、２０ワット８個の内の一つ、電球も切れていたので先ずホームセンターへ行ってみたが、其処には植物蛍光灯は置いてなかった。家に買い置きの物があったが振るとカラカラと音がするので壊れて居ると思い込んでいた、顔見知りの男性の店員さんが私のこの話を聞いて「蛍光灯は振れば音がしますよ」と言う。帰宅してテストをしたら点いた。<BR>
+      お蔭で街の電気屋さん迄行かずに済んだのだった。　お喋りも時には必要だと店員さんに感謝の思いが湧く。　夜、ストックの器具を出し長い時間掛けて何とか一つのスイッチにコードを繋げる作業は無事に終った。　　さぁ又、大切な花の植え替えの仕事が待っています。<BR>
+      <BR>
+      ２月１３日　　　　今日私の所におかしな葉書が舞い込んだ。差出人は司法管理局となっておりトップに書かれた文字は司法処分出廷要請通達書　　内容は「総合消費者民法特例法」上、の法務省認可通達書となっていて、　ご連絡なき場合は裁判所へ出廷云々と長く続き最後に万が一身に覚えが無い場合早急にご連絡下さい、と　０３から始まる電話番号　（訴訟管理課）　原告側からの通達又訴訟とか言う言葉等が続き、何事やら判らないままでも、身に覚えの無い事だから電話を何回も掛けたが話中の様で繋がらない。少々焦ったが、結局、市の消費生活センターに電話をしてみた。係りの方が「電話が通じなくて良かったですね、最近皆さんから問い合わせが有ります。構わないで置いて下さい。」そして差出人の電話番号など全部をあちらから言われた。「ハイその通りです」と私は答えたが怖い思いをしました。<BR>
+      実直な老人（私）は電話が通じないので「身に覚えが無いのに」と、焦って葉書を書いて速達で出そうと外出の支度までしたのです。<BR>
+      しかし「待てよ？」と例の好奇心と方法論が頭を駆け巡りました。１０４で消費者センターの番号を聞き市の消費生活センターを知りました。<BR>
+      その後民生委員さんに電話をし葉書をお預けして、町内会の回覧にして頂く事にしました。仲良しの独り住まいの方にはお知らせをしました。<BR>
+      病院行き、コレステロールのお薬のみ３０日分頂く。ワーデイアンケースの電球が点かず明日の仕事になる。　<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#d0befa">
+  <TBODY>
+    <TR>
+      <TD width="464"><IMG src="itosikazok.jpg" width="588" height="276" border="0"></TD>
+      <TD width="380" bgcolor="#ffffff">２月１０日　　　　これは一ヶ月前の写真<BR>
+      この蕾が持ち上がってきた時の嬉しさは最高！<BR>
+      ＬＩＬＹさんから送られた作品です。<BR>
+      今は大小の花が咲き乱れて居ますが、この初々しい咲き初めが記録したくて載せました。<BR>
+      人間も若い日は巧まずして奇麗ですね。<BR>
+      <BR>
+      今日消毒にかかりましたが風が強くて中止、作った液は椿の太い幹にながしかけました。強い臭いでご近所に気を使いますから、ぼちぼち少しづつ実行しましょう。<BR>
+      夜姪に俳句の話を聞く。愈々トリノ、オリンピックが始まる。<BR>
+      <BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c1b9f9">
+  <TBODY>
+    <TR>
+      <TD width="357" background="haikei2.jpg"><IMG src="sekaiisan.jpg" width="355" height="235" border="0"></TD>
+      <TD width="487" bgcolor="#ffffff">２月９日　　　　昨夜も又雪が降ったらしい、この所庭木に雪が積もっている日が度々だ、さほど新鮮でなく、惰性で眺めている。寒い日が続くのかと思うと、これで春になるかも？なんて気を持たせる日もある。　ＡＭの冬眠にも慣れた。私はＡＭは世捨て人の如く反応が無いに等しい、ゴミもサボる。しかし先日郵便やさんが小包の配達で来られた時は焦った。居留守が使えなくて「待って下さい」を３回連発しておっとり刀で判こを持って出た、時計は１１時だった。<BR>
+      今日も県北で車の３０台事故の放送が有った、雪の日の自動車事故は多くの人を巻き添えにするから怖ろしい。最近、新聞や本には目を通す。テレビは最小限で皇室のおめでたいお話も繰り返しては見ない。<BR>
+      でも左の（テレビ画面）この世界遺産の番組は大好きだから、かぶりつきで見ます、終りになって撮ったのであの番組を見ていない方には解らないかも？<BR>
+      この日の記憶の為に置きました。<BR>
+      心が遠くに翔んで夢を見る思いになります。現実旅行はもう出来ませんが一番楽しみな番組です。新聞をとり始めたので番組表にさ～っと目を通しておく、料理番組も面白く結構アレンジして作ります。只時間が掛かります、でも楽しみ！僅かの量のホタテと蛎のフライなど白菜を刻んで付け合せで満足です。今度昔の本でミート・ローフが作りたいのです。人参の面取りして柔らかいバター煮も瓶詰めにしました。パン食のスープにはパセリを入れたりブロッコリーやシメジも使います。一日２食充実しています。今日はパーマをかけて来ました。もう三越までは行かない事にして、地元の本店で済ませることにしました。<BR>
+      課題、消毒も有りました。如雨露で木の上から掛けようと、４㍑の軽い如雨露を買いました、晴れたら実行です。　セントポーリアは元気です！</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c5b1f8">
+  <TBODY>
+    <TR>
+      <TD background="haikei2.jpg" width="312" height="247"><IMG src="2.52dan.jpg" width="351" height="243" border="0"></TD>
+      <TD bgcolor="#ffffff" width="532" height="247">２月５日　　　　　障子に明るい光が溢れるのを見て起きた。昼になっていた。布団の中で膝を抱えたり伸ばしたりの柔軟体操をたっぷりやって起きた。暖房費節約とその間に今日一日の行動を図る。結局冬眠状態で終った一日だった。プチも私もトイレが遠いので一種の幸せをかんじる。（コードだらけの部屋は夜中に起きたら超充分の注意が必要だ）昼間、懐かしい方二人に電話を掛けた。<BR>
+      お独りは男性、孫達の成長期に何やかと援けて頂いた方、たまにＨＰを見て下さるらしい。今日は奥様がお留守なのでお話が弾み楽しかった。もう１人はこの間℡を頂いた埼玉の方、光にしてから電話料が全国同じ料金でかかり基本料も安いので、相手に気を使わせずゆっくり話せる。　宣伝が激しいので皆さん良くご存知だった。<BR>
+      私の場合は切実だ、長生きをしたらお金が足りなくなる。でも思いようではその（－）故に色々工作（やりくり）をし考えるから頭の体操には良い様な気がする。光プレミアムに興味を持ったのは最善だった。只通話接続に何秒か間がかかる、もう慣れたが始は１１６に文句を言い通した。救急の場合は携帯を使う事にしている。　話題が無くてＮＴＴの宣伝になってしまいましたが、和恵さんはヤフーの無料電話で娘と重宝しているようですから色々ありそうですね。明日はちょっと寒さが来そうです。　三寒四温　そして春が来ます！</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c2b9f9">
+  <TBODY>
+    <TR>
+      <TD width="301" background="haikei2.jpg"><IMG src="ontario.jpg" width="307" height="215" border="0"><BR>
+      </TD>
+      <TD width="590" bgcolor="#ffffff">２月３日　　　Ｋさんの「オンタリオ」咲き始める。　　　節分の今日は和恵さんの誕生日。<BR>
+      風が強かったが春めいた陽射しで洗濯が楽しかった。洗濯物を干しに上がる２階に陽光が射すと明るくて洋裁がしたくなるから不思議だ。神戸のとみちゃんと昨日電話で話したが彼女も今年は還暦だ。早い物でアレヨアレヨと皆が私を追いかけて来る。何処まで行けるかお先真っ暗。今日会った近所の８０才近い方があの世に行ったら先ず運転免許を取ろうと思う、と言われた、羨ましいのだそうだ。パソコンはデジカメ写真で皆に喜んで貰って居ると聞いていたので、好奇心に満ち溢れる彼女に言った。私は転ぶと骨折が怖いし、車は荷物を持ってくれる家族と思う、集中力、判断力、に自信が無くなったら止め様と思っていると話した。今は安全運転で過去よりむしろベストの状態だと思うけれど、体の状態の良い時だけ利用する様にしている。<BR>
+      プチのトイレ用の砂を買ってみた、裏庭がアンモニア臭い、其処はプチの専用の場所だが元々野良猫なのでその習慣のままにしていたが今改善しようとしても手遅れだ。風の向きで裏の家に臭うだろう。消臭剤は無く、薬局で云われたクレゾールは野良猫除けで飼い猫の場合はと、はたと行き詰まった。他所に迷惑を掛けないやりかた？今までは篩いで糞の塊を取り除いて処理しているが、強い臭気は残る。猫用の白い砂を二袋求めて来たがさぁこれから工夫が必要だ。<BR>
+      メガネのねじが又はずれたので眼鏡屋さんにも廻る、隣が小僧寿し、今日は節分とあって店先で丸かじりのまき寿司を売っている。皆３本、５本と買って行く、私も１本買った。帰宅し早めの夕食にそばを添え美味しく頂いた。明日から又寒いそうだが、庭の椿があちこちほころび始め間違いなく春は近いようだ。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c6adf8">
+  <TBODY>
+    <TR>
+      <TD bgcolor="#ffffff" width="234" background="haikei2.jpg"><IMG src="tesuto.jpg" width="234" height="322" border="0"></TD>
+      <TD bgcolor="#ffffff" width="610">１月３１日　　　　ＮＨＫのスタジオ・パーク、は楽しみにしている番組。昨日は永六輔さん、今日は中山エミリさんだった。永さんのお話に共感する事多く、エミリさんの活躍する世界の話にも学ぶ事が多かった。求めていると得られる事はいっぱい有り生きる力になる。<BR>
+      今日はプチの缶詰が無くて朝から要求されていたがドライ・フードをおし付けて我慢させて居た。<BR>
+      それでは夜が持たないので郵便局ついでにホームセンターまで行く。珍しい人に出会った、Ｔさん。友の会の昔の方、お家の前は何時も通るのに１０年近くお見掛けしていない。お会いしたかった方である。友の会のお友達と立ち話をして居られた、私は通り過ぎてからバックで戻りご挨拶をしたがお判りにならないので自己紹介をしたら昔を思い出され小一時間立ち話をした。<BR>
+      三原さんの事が聞きたかったのでそれが解りホッとした。<BR>
+      帰宅して玄関のケースの中の写真を撮った。上は木立ベゴニア、白い花が咲き始めた。光は天井の蛍光灯だけ、２段目はセントポーリアの小グループ、３段目は１１月室内に取り込むとき折れて２本になったクロトン、左はガラスのピッチャーの中で太い真っ白な根を出して逞しく生きている。右の下部は折れた所から葉が出始め（緑色２枚）５月が楽しみな状態だ。一番下のトレイに水をはり２０度に設定したケース内は湿度が保たれている。今朝上のベゴニアに触れたら皮膚に刺激を感じたので外に出しダニ予防のケルセンで消毒した。セントポーリアはベゴニアやシクラメンとは同居できないと思っているので無理を通すのには消毒と思い込んでいる私だ。室内の観葉植物は限界の状態だが石油ストーブで暖、湿、が満たされているから春待ち状態。<BR>
+      このケースも朝夕とても気を付けている。クロトンの葉一枚を台所でコップ挿しにしているがこれにもうっすらと根の様な白い物が出てきた。生き物は楽しい。心を傾ければ応えるのだ。<BR>
+      缶詰のえさをペロッと平らげたプチは暖かいからと消したストーブの前で火をつけて頂戴！とないている。夜は眠る前に指圧、マッサージ、ブラッシング、と至れり尽くせりのケアをするのだがこれも私の独りよがりの思い込みかもしれない。癒される家族！　大切である。<BR>
+      昨夜空揚げの鯵３匹を南蛮漬にした。ジャガイモの大一個７分チン、布巾で包み皮をむきマッシュ、胡瓜、りんご、ゆで卵、のサラダ。時間が無く玉葱抜きではイマイチと言った感じだがマヨネーズ少な目で２回分のサッパリ味、今日に備えた。この所私は（料理？テレビ）に注目なのです。<BR>
+      今朝からは友の会のドライあんこ（３００グラム）を全部練り上げて冷凍にした。砂糖を分量の８分目にしたが少し甘かった。蜜豆に入れる漉餡の用意が出来た。ささやかな自己満足です。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#d2b9f9" height="309">
+  <TBODY>
+    <TR>
+      <TD bgcolor="#ffffff" width="326"><IMG src="susi.jpg" width="352" height="211" border="0"></TD>
+      <TD bgcolor="#ffffff" nowrap valign="bottom" width="486">１月２９日　　　　愈々年寄りになったか？！って感じで午前中暖かい寝床で過去現在未来、色々思案した。カーテンが閉まっているのでプチはぐっすりお休みのようだった。暖かく感じる朝だった、体にブラッシングして、水道の栓をひねり、カーテンを開ける。朝食は何にしようか？チルドに有るささみ、かき、を使ってミルクスープを作った。白菜たっぷりコンソメ味、パン食にした。先日姪と話したが彼女達は４０キロ未満の体重で如何にしたら４０キロに達せるか？と言っている。私は４６キロをキープしているが背丈は３センチちじまった。「いいわねぇ」と言われた。３時半暖かい午後だったので来週の買い物に走る。小玉葱、大根、スーパーニ軒を回る。早ヒヤシンスの鉢が並んでいた。小あじが安かったので南蛮ずけを考え求めた。夕食は太巻きの大名寿司（￥５９８）を久し振りに選んだ、刺身やアナゴや海老や諸々が入っていて、ビールの小缶を楽しめる。何事も無く終った日曜日、明日は暖かくなるそうだ、庭木の消毒が待っている。<BR>
+      <BR>
+      １月２８日　　　　青空の陽光が春めく一日だった。　道雄の誕生日　生きていれば５９歳になる。彼の写真を探して居る内に様々な写真に出会い、過去のふれあった人々のあの頃が思い出され、肝心の息子は抜きになった。　夜　映画に切り替えたら、成瀬監督の「流れる」東京下町の芸者置屋の話。田中絹代が女中さん役で好演、山田五十鈴、杉村春子、他懐かしい栗島すみ子にも会えた。見応えの有る役者揃い、時代感覚も解るので面白かった。今日も一日がアッと言う間に行ってしまった。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE width="860" bgcolor="#b3a4f9">
+  <TBODY>
+    <TR>
+      <TD width="321" bgcolor="#ffffff" background="haikei2.jpg"><IMG src="kazoku4.jpg" width="321" height="278" border="0"></TD>
+      <TD width="568" bgcolor="#ffffff">１月２６日　　　　嬉しい訪問者　夫も大好きだった畑の仲間の１人Hさん。<BR>
+      あの頃はお嬢さんは高校生だった、丁度恵理と同じ年なので可愛いいお嬢さんの自転車姿を楽しく眺めたものだった、結婚して福島に行かれ、赤ちゃんが生まれた。「ねんねこばんてんを縫っている」　「今お雛様を選んでいる！」　お母さんは時々覗いて話しをしてくれるので私の中で想像は育っていった。、今年の大雪に福島県を意識した日も有った。昨日、布教の方が二人来られ、中の１人セントポーリアが好きな村上さんに今度のメルパルクの教室の話をしたり、花を見て頂いている所へこの訪問者が現れた。　例の如く私は起きて軽食を摂った後で顔も洗っていない。布教の方は聖書イザヤ書第35章の言葉を言いかけて、突然のお客様に遠慮されて帰られた。さぁそれからの私はこの小さく大きな存在に集中する。乗り物のまま、革靴を脱いだりはしたが只々愛らしく、夢中で写真を取り捲った。間もなく帰られたが三人の顔が前を向いたのはこれ一枚！３０枚近い写真を直ぐにプリンターで処理し、小高い住まいのH家へと車で走り届けた。急ぐ用事が有るらしいので早く届けようと感じたまでの行動だった、勢いに乗って一気に調整し、オート・フォーカスで処理した。<BR>
+      帰ってから部屋を見回したら朝起きたままのリビングには着替えた下着や読み散らした新聞広告、などが置いてあって恥かしいと思った。この頃何かに夢中になると斯う云う事が多くなった。付き合いなれた方達だったから、も有るけれど、周りのものが目に入らない、気が付かない、心が上滑りの状態が多くなった、気をつけたい。布教の方も聖書を置き忘れて、Hさんが追いかけてお渡ししたので皆が可愛いい出現にあたふたしたのかも知れない。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE width="860" bgcolor="#c8b1f8">
+  <TBODY>
+    <TR>
+      <TD width="320" bgcolor="#ffffff" height="291" background="haikei2.jpg"><BR>
+      <IMG src="eba-baioret.jpg" width="318" height="240" border="0" align="bottom"><BR>
+      <BR>
+      </TD>
+      <TD width="580" bgcolor="#ffffff" height="291">１月２４日　　　朝１０時過ぎ　国会中継を見る。江田五月さんの質問に共鳴しながら朝食を摂った。昨日から胃の具合が悪いので、大事をとってお粥と梅干で済ませる。<BR>
+      午後花の手入れをしながら、新しい花達の顔に希望が湧く。<BR>
+      先日皮間さんから花の寒中見舞いを頂いたので電話で開花報告をした。ミス宮島は病気で駄目だったと報告、形の整い始めた左のエバー・バイオレットやシオサイ、やまびこがLILYさんのパウアウ、レインボークワイエット等と並び目新しく嬉しいのでこの頃はよく面倒を見る。<BR>
+      メルパルクの要請で４月からセントポーリア講座が始まるそうだ！講師は皮間さん。既に７階には見本のセントポーリアが出ているらしい。一ヶ月一回の講習で３ヶ月で一単位が済む予定と話された。夏に向かうから花は作りやすくなるし、植物園の催しも有る。受講者が多い事を祈る。　発起人はメルパルクのお料理の先生だそうで、セントポーリアの写真の葉書をご覧になって、お誘いを受けたと皮間さんは言われた。生き物だから大変だと思うが２８年も作って来られた経験者は新しい作り方も研究して居られるという。今、苗作りをして教材の順備に備えている。と仰っていた。<BR>
+      私もトレイラーの作り方が解らないので体調が良かったら勉強に通うかも知れません。お二方に頂いた花達が健康に育っているので、セントポーリア作りをメインに暮そうと思っていた矢先、　うれしいニュースでした。<BR>
+      夜冴えないテレビ番組を止めて昔の映画を観た（驟雨）　ありきたりの夫婦の話、身につまされて過去を偲び、懐かしい想い出とオーバーラップして暫し時を忘れました。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c0acf7">
+  <TBODY>
+    <TR>
+      <TD bgcolor="#ffffff" width="215" height="303"><IMG src="piegajyou.jpg" width="214" height="320" border="0"></TD>
+      <TD bgcolor="#ffffff" width="629" valign="top" height="303">１月２１日　　　　寝心地の良い暖かい寝床は離れられない。７時のアラームを聴いて１０時過ぎ迄眠るとも無く眠りカーテンを開けたのは１１時、燃費節約、プチはぬくぬく篭の中で目だけ見開いて私の挨拶を待っている。　おはよう！お利口だったね！と小さい頭をなでて朝は始まる。今朝の食事はライ麦のパンにした。蒸しにら餃子４個、ベジタブル炒め、ポタージュ、チーズ一切れ紅茶、イチゴ、食べ終わったら１２時過ぎだった。　電話が鳴る・・・何と！埼玉の住人福岡さんからの声の訪れだった。上野の森に入選した時に会って以来だから１６年ぶりに聞く声だ。彼女は来る年賀状ピカ一の達筆家でいつも感心する。今年の年賀状に「貴女の自筆を見たい、絵は描いているか？」と有ったので　私は折り返し子供用のピエロ画像の葉書を又刷って、今度は全てボールペンで近況を書いて二回目の賀状です、として出したのだった。昔から好奇心が旺盛な人で今ギターを始めて３年目と言う。水彩画、体操、週に一回はピアノの先生をしている娘さんのお孫さんを預かり、面倒も見るそうだ。最近ご主人が引っ込み思案になったと心配げだった。昔と変らず正直同士が思いの丈を話し合った。<BR>
+      <BR>
+      その後先日病院の薬剤室であった元保健婦さんから電話が有った。出会いは不思議である、少し欝気味らしいその人は湯たんぽでやけどをしたそうだ、電気毛布が有るというので、その方が安全と話した。敷布団を一枚多く敷くと素晴らしく暖かいベットになりますよ！と話した。地図や電話帳を見て電話を下さったと言う。<BR>
+      何しろ今日は電話が掛かり通しで、夕方和恵さんから大雪情報を聴くまでずっと話し中だったらしい。<BR>
+      <BR>
+      話中に横目で見ていた朝青龍が勝った。　しかし３敗、この所大相撲が面白く眼が離せない。明日は千秋楽、栃東が勝てば久々の日本人のお相撲さんの優勝だ。でも世界中の人達が参加する時代になったのだ。我が家でさえ国際結婚が現実になったのだから・・・<BR>
+      屋根屋さんが奥さん手作りの金平ごぼう、わかめ、椎茸など色々届けて下さった。術後すっかり快復をされたようで確りされていた。　宇品の村井さんとも電話で話した、圭さんが年末自転車事故で入院なさったらしいが内緒との事、骨折で無ければよいが、２月にはお店に出向いていってみよう。明日は中国駅伝の日。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE width="860" bgcolor="#cbb4f8">
+  <TBODY>
+    <TR>
+      <TD width="254" bgcolor="#ffffff" nowrap background="haikei2.jpg" align="center"><IMG src="barag.jpg" width="350" height="300" border="0"></TD>
+      <TD width="563" bgcolor="#ffffff">１月１９日　　　曇り空の比較的暖かい朝だった。スムーズに早起きが出来た。<BR>
+      昨夜高田さんから電話が有った。ドライフラワーを始めた話は聴いていたが面白い、とても楽しい！と始から終りまでその話だった。自分で作ったバラが無くなり今は花屋さんからバラを求め液体に浸すと言う。東急ハンズで先生から習っているとの事。セントポーリアは４０鉢くらいだがドライフラワーに今夢中、「ヘルパーさんも感心をされる、たのしいよ～」と話される。９１歳にしてこの情熱！私も昔シリカゲルでバラ等を乾燥させたことが有るので想像してみたがアイロンを使うらしい話に、今朝インターネットで調べてみました。<BR>
+      有りました、この左のを選びましたが、カラフルな作品が商品となってケース入りで売られていました。名前も「プリザートフラワー」となっていました。知らないのは私だけかもしれませんね！　時代は変り、あれもこれも変る様です。<BR>
+      高田さんは今、食欲が無くお粥を食べている、と仰りながらも週に２回、水泳もこなして居られ眩しい感じでした。<BR>
+      昨日はハランの子株の間引きや庭の手入れをした、割りに暖かいので歩く運動代わりに屈伸や背伸びなどをこめて庭仕事は体に良いように思う。<BR>
+      裏庭の古い山茶花がいっぱい花を付けていたので切ってお父さんに供える。<BR>
+      最早話し相手は故人とプチ、美津ちゃんから送られた”いきいき”を昨夜寝るまで読みました。美智子さまのお話が大変勉強になりました。<BR>
+      私は自分の記憶の為に此処に洗いざらい書いていますが随分余分な思いをしゃべっているなぁって思いました。お人と話す時は心したいと思いました。<BR>
+      夕方からセントポーリアの植え替え１８鉢済ませる、カーペットの掃除をしたら早１２時を回っている、うがいをし顔を洗った。さぁ眠りましょう！</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c6a4f9">
+  <TBODY>
+    <TR>
+      <TD width="858" bgcolor="#ffffff" height="128">１月１７日　　　　今朝も起床９時過ぎ不燃ごみの日なので昨夕、素焼き鉢の壊れたのを細かく砕いて置いた。のんびり寝床であれこれ考えた挙句に起きる。、ゆっくり身ごしらえをし、今日の水道を出す、アルカリ水に換え、　天国に行った人たち皆に声を掛け、お水第一号を上げる。湯沸しポットにも入れ差込を入れる。うがいをして、例のスポーツドリンク１００ｃｃのむ。　毎度ごみだしが間に合わないのはここいら辺りに３０分以上を要してしまうのだ。集積場に行ったら案の定収集済み。大工さんの槌の音が聞こえ、ご近所の洗濯ものが干してあり、世間一般活躍時間帯だ。毎日これでは日が短くって何にも出来ない。　ブランチを摂り１２時になり１～２時間テレビを見る。３０ワット蛍光灯、灯油ポンプ、（今年３個目）石灰硫黄合剤等を買いにホームセンターへ<BR>
+      郵便局（尊厳死協会会費・その他の振込み）も済ませ帰宅、カーペットの掃除後入浴、夕食に、ポテトサラダを作り、買ってきた冷凍マグロの刺身を作り、油揚げの油抜きをして甘煮にする。時間が掛かるがこの頃は面倒くさくないのだ。むしろ食べたい物を考えて作る楽しみになっている。昨日宇都宮の亮ちゃんからとち乙女（イチゴ）が送られてきた、４個入りなので２軒にお裾分けをし私もご馳走になった。<BR>
+      お礼の電話で暫くぶりの話も出来た。　　昨日は渋谷の住人からも写真入の手紙が届く。　この人は４０年音信不通でお墓まで有ったのにある日突然故郷に現れ、姉妹を驚愕させた御仁である。　今は年中、山登りで体を鍛錬し山小屋の主のお孫さんたちを可愛がって暮しているらしく、いい顔に写っていた。<BR>
+      私は自分に精一杯！それに今、日に日にセントポーリアが頼もしく花首を持ち上げて来ていてケースを見渡しながらおヽわが家族よ！！！と声を掛けとても楽しみだ。今月中に大きな鉢に植え替えたりする予定。　　庭木の消毒も静かな日に実行したい。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#cbb0fb">
+  <TBODY>
+    <TR>
+      <TD width="858" bgcolor="#ffffff" height="46">１月１３日　　　日野原先生の健康番組が続いたのでビデオに取って置いた。今日全部通して見た。Ｙさんから食事の所を見そびれたからと聞いて来た、先生はお忙しいから昼間は流動食が多く、誰にでも適合するとは思えないけれど腹７分で夜はステーキなどのご馳走だった話をした。ビデオを見にいらっしゃいと言っておいた。<BR>
+      今日はどんよりした曇り空、本当は林、井上、さんが昼前に来てご持参の昼食を共にする約束だった。　私はセントポーリアに水を遣る日に当たっていたのでそれを昨夜の内にクリアして風呂に入り、部屋の片付けなども夜の間に済ませた。今朝８時林さんから電話で「夜中に吐いた、多分おばあちゃんを病院に連れて行ったので風邪でも引いたのかも知れないから今日は中止にする」　と言ってきた。<BR>
+      私は何故かホットした。　二人とも真冬の西条から出てくるので心配だった、廣島へ出た折、ついでに寄ってくれるのが一番良いと話したが私自身も弛緩している生活神経が緊張してストレスになっていたようだからホッとしたのだろう。寒中は冬眠に限ると思っている。外は雨になった。<BR>
+      先日スーパーで婦人公論を買ってきて置いたのを思い出した。夫の姪が送ってくれたいきいきも読んだが松田聖子の表紙の奇麗さに惹かれて買って来て有ったのを今日はテーブルに置いた。　テレビは雪の重苦しいニュースで気が滅入る。２回目の洗濯をしながら、雑誌を読み始めた。婦人公論は創刊９０周年で懐かしい昔からの数々の表紙、当時のエピソードなど特集を組んでいる。大宅昌さん犬養道子さんから始まってご縁の有る方々の言葉がその当時を感じさせる、当時を回顧しつつ楽しんだ。殊にフアッションは私の現役の時代の事が多く出ていて、長沢節さんのスタイル画はとても懐かしかった。時代の変遷が数多い本の表紙絵で判る。懐古的な想いが重なり、これによって明日への幾ばくかの活力を得たような気がする。<BR>
+      明日は気温が上がるらしい、雪国で被害の無い事を祈りながら、活気を帯びてきたセントポーリアの植え替えも始めたいと考えています。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+</CENTER>
+<CENTER>
+<TABLE border="1" width="860" bgcolor="#c5a5f5" height="2">
+  <TBODY>
+    <TR>
+      <TD width="858" bgcolor="#ffffff" height="13">１月１２日　　　晴れ、昼過ぎ手向け山の南の枝を葉が出ても前の家との境界線を越さないように切り詰める。前の家から見下ろして春、新葉が奇麗ならば喜んで頂ける。上を向いて高枝バサミを使って居たので後頭部と首がおかしくなったので終了、パソコンに戻った。<BR>
+      今朝ＨＰを見たが全面的に元に戻っていた。恵理の結婚を振り返る。和装で写真を撮ったのは大きなプラスだった、和恵さんの積極性には何時も感心する。<BR>
+      彼と恵理の計画が主なのだろうけれど遠くまで真理と出かけて協力した彼女の行動、考え方、は頼もしい。　たまたま最先端のプリンターを買いそれを利用して自分で和装の記念アルバムを作って彼のご両親や私に送ってくれたりした恵理、若い時の記録は大切だ。二人協力して作った資金での結婚式は両国の間のハワイになった、インターネット、メールであらゆる事を決めて、現実に臨んだ時、思いと違ってストレスで現地で病気になった花嫁さん！彼女独りで其処までおこなった事が今後も役立つ事でしょう。勿論、相談相手になって励ました母親の存在も大きい。　ハワイ写真の第一報を見て、服装について文句を言った完全主義の私は　「お母さんが行かないから悪いのよ」の一言でぎゃふんとなりました。　行って行けなくはなかったのに、プチが可哀相で、体力も無いし、飛行機に乗った事もないのです。今写真を見るとこれで良かった！と胸を撫で下ろし「よくやったね！」と思っています。<BR>
+      孫達の成長で写真を沢山使うであろうと、プロバイダー迄変って備えたのですから・・・・・・<BR>
+      <BR>
+      １月１１日　　　昨夜から今日は魔の日だった、昨夜ブック・アプレットをを手がけてみた。恵理ちゃんの写真の縦長が残っていてロスのご家族やお友達にも見て頂けるからと１・２と重複する画像も有ったがサイズを揃えてめくれる画像は直ぐに出来た。その後、ビルダに取り込む作業を間違えた。”ファイル転送”でエラーになり、あちこちいじくりすぎてディレクトリは壊れ、ビッグローブに電話して新しいパスワードを貰って全てのフアイルを転送する羽目になってしまった。数多いフォルダ・ファイルを早く送ろうとすればエラーでストップになるから、一日中パソコンを休息させつつ、フアイルの転送を済ませたのは夕方だった。この間、ビルダーのアドバイスも受けたがパソコンがＸＰになっていたので本当に助かった！　ＭＥだったら固まって動かなかったと思うほど何回も時間を置いて転送した。　しかしこれで又勉強になったとプラスに考えたい。<BR>
+      灯油の値段が一缶１５２０円になった。今日は夕方近くの医者に行き、コレステロールの薬を頂いてきた。<BR>
+      </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<CENTER><BR>
+<BR>
+<TABLE width="862" height="2" bgcolor="#bf9fee">
+  <TBODY>
+    <TR>
+      <TD width="860" bgcolor="#ffffff">１月９日　　　成人の日　　　寒にしては暖かい日だった、昨日バラやミカンなどの木の剪定をしたが思い立ってバラ・ブルームーンの鉢を植え替えた。計画的ではなかったので赤玉土（小粒）が足りなかったけれど牛糞と赤玉（中粒）、古土、も足して間に合った。油粕＋骨粉の古い肥料の袋が私をやる気にさせたのだ、昔は大いにやったものだった、３６本のバラが有った、車庫の上に這わせてピースが数え切れなく咲いた頃息子達は大学生だった。車庫の上に長男家族が住むように改築した時にバラの数は半減した。　想いを遠く馳せながら胸がうずいた。<BR>
+      バラ、ゆずなど棘のある木を片付ける為小さく切って袋詰めし、植え替えたバラに水を注ぐ。真冬で寒かろうと一瞬と惑った。バラの植え替えはこの所何年もしていない、何と気まぐれな私である事よ！？　と苦笑した。でもブルームーンのあの香りを又是非味わいたい！<BR>
+      庭を熊手で掃き、今日の作業を終える。頭は時にふらつく事があっても体を動かしていると意外に確りと仕事が成り立つ、尺鉢、の重い物も重ねて物置から出して庭に運んだ。物置の大きい青いビニールケースに夫が買って置いた油粕が有ったので効くかどうか？と思いながら庭木に施した。剪定、施肥、寒の仕事が終った。手向け山もみじの剪定は大掛かりになるからこの次の暖かい日に鋸作業も含めて実行しよう。<BR>
+      大雪に見舞われた地方でシャベルが売り切れた映像を見たが私もシャベルが欲しい、しかし笑われそうで買うのが憚れる、作業を人に頼めば大きなお金が掛かる、高枝バサミもそう思って買ったのは夫の元気な頃だった、道具は尊い！先日近所の方がシルバーセンターの方に障子貼りを頼まれたそうだけれど２枚で６０００円でやって下さった、と話していた。外して３,４日は外から丸見えの部屋を布でカバーして過されたそうだ。<BR>
+      マイペースでゆっくり気ままにやって行こう！　　気が向いたら何事も出来るだけ楽しんでやりたいものだ。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<P align="center"><B><BR>
+</B></P>
+<CENTER>
+<TABLE width="862" bgcolor="#c59cf5" height="165">
+  <TBODY>
+    <TR>
+      <TD width="860" bgcolor="#ffffff">１月５日　　　小寒　　又雪が降るとニュースで聞く、大雪が続き雪崩も起きているとか、北国の方達の暮しが思い遣られる。<BR>
+      私は、お正月も普段の生活と変わりなく朝寝坊の毎日を堪能している。年末に敷布団を２枚にした所電子敷き毛布のお蔭もあり眠る時最高にソフトで温かい。温かく休む為には「上に掛けるより敷布団を」とテレビで聴いて実行したまでだが誠に快い。<BR>
+      年賀状は今日までに８０通届いた。その都度私も書いては出しに行く。<BR>
+      昨年頂いたセントポーリアの花芽が咲き始めた。ニューフェイスの顔を見るのは楽しみだ。うっかりすると繁って葉芽になっていたりするから観察と芽掻きが結構忙しい。Ｋさんから譲って頂いた株は此処まで大変手が掛かった、根元から切り、再生を図った株もあった、しかし始末に戸惑う株も、家族になったのだと思うと一生懸命工夫をしてみる、どうしたら良いか解らない株も未だ有るが、私はむしろ課題を与えられて勉強をしたいと考えたい。少しづつ整う時、聊かの満足感さえ有るのだから・・・・・<BR>
+      セントポーリアは花芽が出ると苦労を忘れ満足に変わる。　トレイラーの作り方を大きいこんもり型にしたい。時間の掛かる問題だから果してできるかしら？　<BR>
+      ＬＩＬＹさんの株は整然と咲き始めた、一月、植え替えが必要なほどに葉が混みだした、２、３月が楽しみです。　　<BR>
+      観葉植物は室内に置いて、ストーブの湿度で活き活きしている。今年は玄関は事の外寒いので今はリビングと奥の和室にも置いて保護している。<BR>
+      植物とプチがのさばっている室内、家族が寄り添っていると思えば何ていう事もない。贅沢にさえ思える。植物の持つ湿度が体に良いらしく、快適です。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+<DIV align="left"></DIV>
+<DIV style="width : 406px;height : 363px;top : 97px;left : 259px;
+  position : absolute;
+  z-index : 21;
+" id="Layer21" align="center"><EMBED src="imagine%5B1%5D.mid" autostart="true" hidden="true" loop="true">
+<DIV style="width : 42px;height : 42px;top : 321px;left : 208px;
+  position : absolute;
+  z-index : 19;
+" id="Layer19"><A href="javascript:HpbSlideStart('Layer18', 1, false, 1, false);"><IMG src="m0041.gif" width="42" height="42" border="0"></A></DIV>
+<DIV style="width : 42px;height : 42px;top : 321px;left : 156px;
+  position : absolute;
+  z-index : 20;
+" id="Layer20"><A href="javascript:HpbSlideStart('Layer18', 1, true, -1, false);"><IMG src="m0042.gif" width="42" height="42" border="0"></A></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 1;
+  visibility : visible;
+" id="Layer1"><IMG src="torino/torino01.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 2;
+  visibility : hidden;
+" id="Layer2"><IMG src="torino/torino02.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 405px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 3;
+  visibility : hidden;
+" id="Layer3"><IMG src="torino/torino03.jpg" width="405" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 4;
+  visibility : hidden;
+" id="Layer4"><IMG src="torino/torino04.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 5;
+  visibility : hidden;
+" id="Layer5"><IMG src="torino/torino05.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 6;
+  visibility : hidden;
+" id="Layer6"><IMG src="torino/torino06.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 7;
+  visibility : hidden;
+" id="Layer7"><IMG src="torino/torino07.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 8;
+  visibility : hidden;
+" id="Layer8"><IMG src="torino/torino08.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 9;
+  visibility : hidden;
+" id="Layer9"><IMG src="torino/torino09.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 10;
+  visibility : hidden;
+" id="Layer10"><IMG src="torino/torino010.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 11;
+  visibility : hidden;
+" id="Layer11"><IMG src="torino/torino011.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 12;
+  visibility : hidden;
+" id="Layer12"><IMG src="torino/torino012.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 13;
+  visibility : hidden;
+" id="Layer13"><IMG src="torino/torino013.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 14;
+  visibility : hidden;
+" id="Layer14"><IMG src="torino/torino014.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 15;
+  visibility : hidden;
+" id="Layer15"><IMG src="torino/torino015.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 16;
+  visibility : hidden;
+" id="Layer16"><IMG src="torino/torino016.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 17;
+  visibility : hidden;
+" id="Layer17"><IMG src="torino/torino017.jpg" width="406" height="311" border="0"></DIV>
+<DIV style="width : 406px;height : 311px;top : 0px;left : 0px;
+  position : absolute;
+  z-index : 18;
+  visibility : hidden;
+" id="Layer18" align="right"><IMG src="torino/torino018.jpg" width="406" height="311" border="0"></DIV>
+</DIV>
+</BODY>
+</HTML>
